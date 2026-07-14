@@ -1,0 +1,29 @@
+Actúa como un estudiante de programación de primeros semestres que tiene un conocimiento sumamente básico de React y JavaScript. Tu objetivo es escribir el código completo para una aplicación de agenda de contactos desde cero, cumpliendo estrictamente con la rúbrica pero utilizando la lógica más simple, directa y "arcaica" posible, sin optimizaciones avanzadas, sin hooks complejos y sin librerías externas.
+
+Como no tengo ninguna plantilla inicial, genera la estructura completa del proyecto en archivos separados e independientes:
+
+    index.html: Un archivo HTML5 básico con un div con id "root" y la importación de main.jsx.
+
+    main.jsx: El punto de entrada clásico de React que monta la aplicación en el DOM.
+
+    contactos.json: Un archivo JSON que contiene un array con 3 o 4 contactos de ejemplo usando la estructura obligatoria de objetos (id, nombre, correo, telefono) para inicializar la aplicación.
+
+    App.jsx: Todo el código de React (lógica, funciones y maquetación en una sola columna centralizada) concentrado aquí para no complicar la navegación de archivos.
+
+    App.css: Un archivo de estilos CSS plano, hiperminimalista, limpio y sobrio (sin colores estridentes, tipografía sans-serif del sistema, bordes finos grises y caja centrada) para darle una estética cuidada pero sumamente simple.
+
+El estado de la lista de contactos en App.jsx debe inicializarse importando directamente el archivo contactos.json (por ejemplo: import datosIniciales from './contactos.json') y pasándolo como el valor inicial de useState(datosIniciales). No utilices localStorage, ni llamadas fetch complejas. Para generar los IDs únicos de los nuevos objetos de contacto creados por el usuario, utiliza simplemente Date.now().
+
+La lógica de la aplicación debe resolverse únicamente con useState básicos para las variables del formulario (nombre, correo, telefono, error, idEnEdicion) y para la lista de contactos. No utilices ganchos avanzados como useMemo ni useCallback.
+
+Desarrolla las siguientes funciones utilizando exclusivamente funciones flecha, operadores ternarios y métodos nativos sencillos de arrays:
+
+    Búsqueda en tiempo real: No utilices efectos intermedios para guardar la lista filtrada. En su lugar, realiza el filtrado directamente dentro del cuerpo del componente (en el renderizado) aplicando un .filter() clásico sobre la lista original de contactos, comparando el nombre del contacto con el texto del input de búsqueda usando .toLowerCase() para ignorar mayúsculas y minúsculas.
+
+    Registro y Edición: Utiliza un formulario controlado con inputs que actualicen sus respectivos estados mediante eventos onChange. Usa un único formulario tanto para registrar como para editar. Si hay un contacto en edición (comprobándolo con la existencia de un idEnEdicion), el botón del formulario debe cambiar dinámicamente su texto a "Actualizar" usando un operador ternario. Si se está registrando, el botón debe decir "Guardar". Al procesar el formulario, si se está editando, reemplaza el elemento en el array usando .map() y el ID; si es un registro nuevo, añádelo al array de contactos en el estado. Al finalizar, limpia todos los inputs y el estado de edición.
+
+    Eliminación: Al presionar "Eliminar", muestra un cuadro de confirmación nativo con window.confirm(). Si el usuario acepta, filtra la lista usando .filter() para excluir el contacto con ese ID y actualiza el estado de la lista.
+
+    Validaciones: Antes de guardar o actualizar, verifica que ningún campo esté vacío (aplicando .trim()), que el correo tenga un formato básico con una expresión regular sencilla, y que el teléfono no tenga letras comprobando si el valor de la cadena no es un número utilizando la función nativa isNaN(). Si falla alguna validación, guarda el mensaje en un estado de error y muéstralo en la interfaz en texto rojo plano debajo del formulario. Si todo es correcto, limpia el estado de error.
+
+Incluye comentarios muy cortos y directos en español dentro del código que expliquen la lógica de manera simple para que pueda defender mi código ante el profesor. Devuelve el código completo de los 5 archivos listo para copiar y pegar.

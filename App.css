@@ -1,0 +1,180 @@
+/* App.css - Estilos limpios, sobrios e hiperminimalistas */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #fafafa;
+  color: #333333;
+  margin: 0;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: 960px; /* Aumentamos el ancho máximo para dar espacio a dos columnas */
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 32px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 32px;
+  color: #1a202c;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #2d3748;
+  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 8px;
+}
+
+/* Distribución en dos columnas */
+.distribucion-columnas {
+  display: flex;
+  gap: 40px;
+  flex-direction: row;
+}
+
+.columna-formulario {
+  flex: 1;
+  min-width: 300px;
+}
+
+.columna-listado {
+  flex: 1.5;
+  min-width: 320px;
+}
+
+/* Media query para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .distribucion-columnas {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.grupo-campo {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  outline: none;
+  background-color: #ffffff;
+  color: #2d3748;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #a0aec0;
+  box-shadow: 0 0 0 3px rgba(160, 174, 192, 0.15);
+}
+
+.input-buscar {
+  margin-bottom: 24px;
+  border-color: #cbd5e0;
+}
+
+.btn {
+  width: 100%;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #2d3748;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #4a5568;
+}
+
+.btn-secundario {
+  background-color: #f7fafc;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  width: auto;
+  padding: 6px 12px;
+  font-size: 13px;
+  margin-left: 8px;
+  border-radius: 6px;
+}
+
+.btn-secundario:hover {
+  background-color: #edf2f7;
+}
+
+.btn-eliminar {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #fed7d7;
+}
+
+.btn-eliminar:hover {
+  background-color: #fed7d7;
+}
+
+.error-mensaje {
+  color: #e53e3e;
+  font-size: 13px;
+  margin-top: 12px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.lista-contactos {
+  margin-top: 0;
+}
+
+.tarjeta-contacto {
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-color: #f7fafc;
+}
+
+.tarjeta-contacto p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.tarjeta-contacto strong {
+  color: #2d3748;
+}
+
+.acciones-contacto {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
