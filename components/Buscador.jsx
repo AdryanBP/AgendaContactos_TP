@@ -1,6 +1,4 @@
 import React from 'react';
-
-// Componente reciclable para la barra de búsqueda en tiempo real
 function Buscador({ busqueda, setBusqueda }) {
   return (
     <div>

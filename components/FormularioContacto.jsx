@@ -1,6 +1,4 @@
 import React from 'react';
-
-// Componente simple y reciclable para el formulario de contactos
 function FormularioContacto({
   nombre,
   setNombre,
@@ -15,7 +13,6 @@ function FormularioContacto({
 }) {
   return (
     <form onSubmit={handleSubmit}>
-      {/* Título dinámico para saber si estamos registrando o editando */}
       <h2>{idEnEdicion !== null ? 'Editar Contacto' : 'Nuevo Contacto'}</h2>
 
       <div className="grupo-campo">
@@ -48,19 +45,16 @@ function FormularioContacto({
         />
       </div>
 
-      {/* Botón con texto dinámico dependiendo del modo (editar/guardar) */}
       <button type="submit" className="btn">
         {idEnEdicion !== null ? 'Actualizar' : 'Guardar'}
       </button>
 
-      {/* Botón para cancelar la edición si el usuario lo desea */}
       {idEnEdicion !== null && (
         <button type="button" className="btn btn-secundario" onClick={cancelarEdicion}>
           Cancelar Edición
         </button>
       )}
 
-      {/* Mensaje de error si falla alguna validación */}
       {error && <div className="error-mensaje">{error}</div>}
     </form>
   );
